@@ -1,0 +1,14 @@
+%condensed {
+	font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+%normal{
+	font-family: 'Ubuntu', sans-serif;
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}  
+}

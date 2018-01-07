@@ -1,0 +1,35 @@
+.search{
+	visibility: visible;
+	
+	&__box{
+		padding: 10% 50px;
+	}
+
+	&--field{
+		width: 90%;
+		height: 80px;
+		border: 0;
+		border-bottom: 1px solid $gray-light;
+		background: $black;
+		font-size: 32px;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		@extend %condensed;
+		color: $white;
+
+		@include placeholder{
+			color: $gray-light;
+		}
+
+		&:active,
+		&:focus{
+			outline: 0;
+		}
+	}
+}
+
+.searchResultActived{
+	.search{
+		visibility: hidden;
+	}
+}
