@@ -8,6 +8,13 @@
 		font-size: 40px;
 	}
 
+	&__logo{
+		background: url('../images/pokemon_logo.png') no-repeat;
+		width: 250px;
+		height: 255px;
+		background-size: contain;
+	}
+
 	&__text{
 		text-align: center;
 

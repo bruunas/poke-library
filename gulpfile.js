@@ -15,7 +15,7 @@ var paths = {
 	scripts: ['assets/js/**.js'],
 	sass: ['./assets/sass/main.scss'],
 	html: ['index.html'], 
-	images: ['assets/img/**']
+	images: ['assets/images/**']
 };
 
 
