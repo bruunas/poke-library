@@ -33,3 +33,21 @@
 		visibility: hidden;
 	}
 }
+
+.content--search{
+	.search__box{
+		padding: 0;
+	}
+
+	.search--field{
+		background: $white;
+		color: $black;
+		padding-left: 20px;
+	}
+}
+
+.content__main--search{
+	.search__box{
+		padding: 10% 50px;
+	}
+}

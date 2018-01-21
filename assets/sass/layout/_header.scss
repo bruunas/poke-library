@@ -1,5 +1,14 @@
 .header{
-	padding: 50px;
+	padding: 25px 0;
+
+	&__container{
+		max-width: 1200px;
+		width: 100%;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+	}
 
 
 	&__title{
@@ -21,5 +30,9 @@
 		.total-group{
 			color: $gray-dark;
 		}
+	}
+
+	&__search{
+		width: calc(100% - 300px)
 	}
 }
