@@ -1,6 +1,9 @@
 .search__autocomplete{
 	padding: 10px 40px;
-	display: none;
+	display: block;
+	position: absolute;
+	width: 100%;
+	background: #ccc;
 
 	&--list{
 		margin-top: 20px;

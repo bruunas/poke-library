@@ -1,29 +1,29 @@
 var bindEvents = function() {
-	$(".search__box").on("change keyup paste click", ".search-pokemon", function(
+
+	// Search interation //
+	$('.search__box').on('change keyup paste click', '.search-pokemon', function(
 		evt
 	) {
 		var $val = $(this).val();
 		// var $target = evt.target;
 
-		$("body").addClass("inputSearchActived");
+		$('body').addClass('inputSearchActived');
 	});
 
-	$(".search__box").on("focusout", function() {
-		$("body").removeClass("inputSearchActived");
+	$('.search__box').on('focusout', function() {
+		$('body').removeClass('inputSearchActived');
 	});
 
-	$(".list-group").on("click", ".item-pokemon a", function(evt) {
+
+	// Selection //
+	$('.list-group').on('click', '.item-pokemon a', function(evt) {
 		evt.preventDefault();
 
 		var $this = $(this),
-			name = $this.attr("data-pokemon");
+			name = $this.attr('data-pokemon');
 
 		requestAboutPokemon(name);
 	});
-};
-
-var totalPokemon = function(total) {
-	$(".header .total-group").text(total);
 };
 
 var pokemonList = function(pokemons) {
@@ -92,26 +92,39 @@ var requestAboutPokemon = function(name) {
 	$("body").addClass("searchResultActived");
 };
 
-var searchAction = function() {};
+var searchAction = function(pokemons) {
+	
+};
 
 $(function() {
-	// pokémon group
+	bindEvents();
+	
+	// Request API //
 	$.ajax({
-		url: "http://pokeapi.salestock.net/api/v2/pokemon/?limit=20"
+		url: "http://pokeapi.salestock.net/api/v2/pokemon/?limit=10"
 	}).then(function(arr) {
 		console.log(arr);
 
 		var _this = arr,
-			totalPokemons = _this.count;
+			totalPokemons = _this.count,
+			pokemons = _this.results;
 
-		var pokemons = arr.results;
 
-		totalPokemon(totalPokemons);
-		pokemonList(pokemons);
+		// var pokemonEach = pokemons.forEach(function(data){
+		// 	var elemName = data.name,
+		// 	 elemURL = data.url;
+
+		// 	// console.log(elemName, elemURL);
+			
+		// 	// $('.search-pokemon').autocomplete({
+		// 	// 	source: elemName.split(",")
+		// 	// });
+		// });
+
+
+
+		// pokemonList(pokemons);
 	});
-
-	searchAction();
-	bindEvents();
 });
 
 $(document).ajaxStop(function() {
